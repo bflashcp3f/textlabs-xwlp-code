@@ -37,7 +37,7 @@ the WLP dataset is available [here]() (the version we use is an older version).
 
 #### Mention Identification
 ```
-# Training
+# Training / Evaluation
 export WLP_PATH=<WLP_PATH>
 export XWLP_PATH=<XWLP_PATH>
 export SCIBERT_PATH=<SCIBERT_PATH>
@@ -62,6 +62,11 @@ python code/pipeline_men_iden_infer.py     \
   --batch_size 16    \
   --gpu_ids 0,1,2,3    \
   --output_dir $OUTPUT_DIR/predictions/pipeline_mi
+```
+Note that the evaluation of Mention Identification requires to install the `conlleval` library like following.
+```
+cd ..
+
 ```
 
 #### Predicate Grounding
@@ -126,7 +131,7 @@ python code/pipeline_re_eval.py     \
 
 
 ### Multi-Task
-We use the code of [DyGIE++](https://github.com/dwadden/dygiepp) (Soares et al., 2019) for experiments.
+We adapt the code of [DyGIE++](https://github.com/dwadden/dygiepp) (Wadden et al., 2019) for experiments.
 #### Environment/Data Setup
 ```
 # Clone the DyGIE++ repo
