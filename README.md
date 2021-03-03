@@ -176,7 +176,6 @@ sh scripts/train/predict_xwlp_sliding.sh $MULTI_TASK_MODEL $MULTI_TASK_DATA
 cd ../textlabs-xwlp-code
 
 # Predicate Grounding
-export MULTI_TASK_PRED=<MULTI_TASK_PRED>
 python code/multi-task_pred_ground_eval.py     \
   --gold_path $MULTI_TASK_DATA    \
   --pred_path $MULTI_TASK_MODEL
