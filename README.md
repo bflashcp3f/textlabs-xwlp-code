@@ -160,16 +160,14 @@ python code/preprocess/generate_multi-task_data.py     \
 
 #### Training
 ```
-export DATA_DIR=<DATA_DIR>
-export OUTPUT_DIR=<OUTPUT_DIR>
-sh scripts/train/train_xwlp_sliding.sh $DATA_DIR $OUTPUT_DIR 
+cd ../dygiepp
+export MULTI_TASK_MODEL=<MULTI_TASK_MODEL>
+sh scripts/train/train_xwlp_sliding.sh $MULTI_TASK_DATA $MULTI_TASK_MODEL
 ```
 
 #### Inference
 ```
-export MODEL_DIR=<MODEL_DIR>
-export DATA_DIR=<DATA_DIR>
-sh scripts/train/predict_xwlp_sliding.sh $MODEL_DIR $DATA_DIR
+sh scripts/train/predict_xwlp_sliding.sh $MULTI_TASK_MODEL $MULTI_TASK_DATA
 ```
 ### 
 
@@ -181,12 +179,12 @@ cd ../textlabs-xwlp-code
 export MULTI_TASK_PRED=<MULTI_TASK_PRED>
 python code/multi-task_pred_ground_eval.py     \
   --gold_path $MULTI_TASK_DATA    \
-  --pred_path $MULTI_TASK_PRED
+  --pred_path $MULTI_TASK_MODEL
 
 # Argument Role Labeling + Temporal Ordering (RE)
 python code/multi-task_re_eval.py     \
   --gold_path $MULTI_TASK_DATA    \
-  --pred_path $MULTI_TASK_PRED
+  --pred_path $MULTI_TASK_MODEL
 ```
 
 ## Contact
