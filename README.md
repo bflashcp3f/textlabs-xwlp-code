@@ -63,11 +63,6 @@ python code/pipeline_men_iden_infer.py     \
   --gpu_ids 0,1,2,3    \
   --output_dir $OUTPUT_DIR/predictions/pipeline_mi
 ```
-Note that the evaluation of Mention Identification requires to install the `conlleval` library like following.
-```
-cd ..
-
-```
 
 #### Predicate Grounding
 ```
@@ -150,9 +145,9 @@ python scripts/pretrained/get_scibert.py
 
 # Copy scripts to right paths
 cd ../textlabs-xwlp-code
-cp train_xwlp_sliding.sh ../dygiepp/scripts/train/
-cp predict_xwlp_sliding.sh ../dygiepp/scripts/train/
-cp xwlp_sliding.jsonnet ../dygiepp/training_config/
+cp scripts/train_xwlp_sliding.sh ../dygiepp/scripts/train/
+cp scripts/predict_xwlp_sliding.sh ../dygiepp/scripts/train/
+cp config/xwlp_sliding.jsonnet ../dygiepp/training_config/
 
 # Generate data for experimetns of Multi-Task model
 export MULTI_TASK_DATA=<MULTI_DATA>
@@ -165,13 +160,16 @@ python code/preprocess/generate_multi-task_data.py     \
 
 #### Training
 ```
-cd ../dygiepp
-sh scripts/train/train_xwlp_sliding.sh
+export DATA_DIR=<DATA_DIR>
+export OUTPUT_DIR=<OUTPUT_DIR>
+sh scripts/train/train_xwlp_sliding.sh $DATA_DIR $OUTPUT_DIR 
 ```
 
 #### Inference
 ```
-sh scripts/train/predict_xwlp_sliding.sh
+export MODEL_DIR=<MODEL_DIR>
+export DATA_DIR=<DATA_DIR>
+sh scripts/train/predict_xwlp_sliding.sh $MODEL_DIR $DATA_DIR
 ```
 ### 
 
