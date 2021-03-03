@@ -33,7 +33,7 @@ following the [SciERC](https://github.com/dwadden/dygiepp/blob/master/doc/data.m
 ## Model
 ### Pipeline 
 The checkpoint of `scibert-scivocab-uncased` can be downloaded [here](https://github.com/allenai/scibert), and 
-the WLP dataset is available [here]() (the version we use is an older version).
+the WLP dataset is available [here](https://drive.google.com/file/d/1ba49R1KU4JdKV9D0Vr122t5NUEwCR7mQ/view?usp=sharing) (the version we use is an older version).
 
 #### Mention Identification
 ```
