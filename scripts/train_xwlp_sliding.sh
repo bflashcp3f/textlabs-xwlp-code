@@ -8,7 +8,7 @@ config_file="./training_config/xwlp_sliding.jsonnet"
 for split_idx in 0 1 2 3 4;
 do
   experiment_name="xwlp-split-${split_idx}"
-  data_root="${data_dir}/split_${split_idx}"
+  data_root="${data_dir}/dygiepp/split_${split_idx}"
   serial_dir="${output_dir}/${experiment_name}"
   cache_dir="${output_dir}/${experiment_name}/cached"
 
