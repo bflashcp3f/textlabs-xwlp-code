@@ -119,4 +119,4 @@ dependencies:
     - widgetsnbextension==3.5.1
     - wrapt==1.12.1
     - zipp==3.4.0
-prefix: /nethome/fbai31/miniconda3/envs/xwlp
+
